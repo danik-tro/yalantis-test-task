@@ -3,3 +3,8 @@ env/
 .idea/
 alembic/
 test.db
+app/__pycache__/
+*/__pycache__/
+app/routes/__pycache__/
+app/test/__pycache__/
+Pipfile
