@@ -15,8 +15,8 @@ def test_read_app():
 def test_post_course():
     response = client.post('/courses/', json={
         "name": 'Test_1',
-        "start_date": "2020-09-15T15:43:00",
-        "end_date": "2021-09-15T15:43:00",
+        "start_date": "2020-09-15",
+        "end_date": "2021-09-15",
         "lectures": 5
     })
 
@@ -32,8 +32,8 @@ def test_full_crud():
 
     course = {
         "name": 'Test_1',
-        "start_date": "2020-09-15T15:43:00",
-        "end_date": "2021-09-15T15:43:00",
+        "start_date": "2020-09-15",
+        "end_date": "2021-09-15",
         "lectures": 5
     }
 
@@ -59,8 +59,8 @@ def test_full_crud():
     assert response.json() == {"id": response_id, **course, **update_name}
 
     update_date = {"name": "Test_3",
-                   "start_date": "2020-05-11T15:43:00",
-                   "end_date": "2021-02-15T12:43:00",
+                   "start_date": "2020-05-11",
+                   "end_date": "2021-02-15",
                    }
     response = client.put(f'/courses/{response_id}', json={
         **update_date
@@ -70,8 +70,8 @@ def test_full_crud():
     assert response.json() == {"id": response_id, **course, **update_date}
 
     response = client.get('/courses/_search/', params={
-        "start_date": "2019-05-11T15:43:00",
-        "end_date": "2022-02-15T12:43:00",
+        "start_date": "2019-05-11",
+        "end_date": "2022-02-15",
         "name": "est",
         "lectures": 5
     })

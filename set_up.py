@@ -34,4 +34,4 @@ def replace_files(alembic_directory: str, migrations_directory: str, db_name: st
 
 
 if __name__ == "__main__":
-    init_migrations('test_test_alembic', "test_migrations", 'prod')
+    init_migrations('db', "migrations", 'prod')
